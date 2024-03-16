@@ -35,32 +35,6 @@ async function createComments(req, res, next) {
   }
 }
 
-// async function getcomments(req, res, next) {
-//     try {
-//         const commentUser = await models.comments.findOne({
-//             where:{id: req.params.id},
-//             include: [
-//                 {
-//                     model: models.User
-//                 }
-//             ]
-//         })
-//         if(req.params.postId == commentUser.postID)
-//         res.json({
-//             success: true,
-//             commentUser
-//         })
-//         else
-//         res.json({
-//             success: false,
-//             error: "post does not belong to the current user"
-//         })
-//     } catch (error) {
-//         console.log(error, "this is a new error.")
-//         next(error)
-//     }
-// }
-
 async function getAllComments(req, res, next) {
   try {
     const { postId } = req.params
